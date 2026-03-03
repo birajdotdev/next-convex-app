@@ -3,11 +3,17 @@
   "mcp": {
     "shadcn": {
       "type": "local",
-      "command": [
-        "npx",
-        "shadcn@latest",
-        "mcp"
-      ],
+      "command": ["npx", "shadcn@latest", "mcp"],
+      "enabled": true
+    },
+    "clerk": {
+      "type": "remote",
+      "url": "https://mcp.clerk.com/mcp",
+      "enabled": true
+    },
+    "convex": {
+      "type": "local",
+      "command": ["npx", "convex@latest", "mcp", "start"],
       "enabled": true
     }
   }

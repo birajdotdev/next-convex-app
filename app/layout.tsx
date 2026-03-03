@@ -1,13 +1,11 @@
+import { ClerkProvider } from "@/components/clerk-provider";
+import { ConvexClientProvider } from "@/components/convex-client-provider";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
-import { ConvexClientProvider } from "@/components/convex-client-provider";
-import { ClerkProvider } from "@clerk/nextjs";
-import { ThemeProvider } from "@/components/theme-provider";
-import { shadcn } from "@clerk/themes";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Toaster } from "@/components/ui/sonner";
-import { Navbar } from "@/components/navbar";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -45,21 +43,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ClerkProvider
-            appearance={{
-              baseTheme: shadcn,
-              layout: {
-                logoImageUrl: "/convex.svg",
-                logoLinkUrl: "/",
-                socialButtonsPlacement: "bottom",
-                unsafe_disableDevelopmentModeWarnings: true,
-              },
-            }}
-            dynamic
-          >
+          <ClerkProvider dynamic>
             <ConvexClientProvider>
               <TooltipProvider>
-                <Navbar />
                 {children}
                 <Toaster richColors position="top-center" />
               </TooltipProvider>
