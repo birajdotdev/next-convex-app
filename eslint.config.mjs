@@ -24,7 +24,7 @@ export default defineConfig([
     },
   },
   {
-    files: ["convex/**/*.{ts,tsx,js,cjs,mjs}", "env.ts"],
+    files: ["src/convex/**/*.{ts,tsx,js,cjs,mjs}", "src/env.ts"],
     rules: {
       "n/no-process-env": "off",
     },
@@ -36,7 +36,7 @@ export default defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
-    "convex/_generated",
+    "src/convex/_generated",
     ".agents/skills",
   ]),
 ]);
