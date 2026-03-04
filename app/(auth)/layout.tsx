@@ -1,3 +1,3 @@
 export default function AuthLayout({ children }: LayoutProps<"/">) {
-  return <div className="flex w-full min-h-screen">{children}</div>;
+  return <div className="flex min-h-screen w-full">{children}</div>;
 }

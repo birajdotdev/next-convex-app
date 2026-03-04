@@ -1,17 +1,19 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
+
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
+
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
-import {
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  SignUpButton,
-  UserButton,
-} from "@clerk/nextjs";
-import Image from "next/image";
-import Link from "next/link";
 
 function AuthButtons({ className }: { className?: string }) {
   const isMobile = useIsMobile();
@@ -38,11 +40,11 @@ function AuthButtons({ className }: { className?: string }) {
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border bg-background">
-      <nav className="container flex h-14 items-center justify-between px-4 mx-auto max-w-7xl">
+    <header className="border-border bg-background sticky top-0 z-40 w-full border-b">
+      <nav className="container mx-auto flex h-14 max-w-7xl items-center justify-between px-4">
         <Link
           href="/"
-          className="flex items-center gap-2 font-medium text-foreground hover:text-foreground/80"
+          className="text-foreground hover:text-foreground/80 flex items-center gap-2 font-medium"
         >
           <Image
             src="/convex.svg"
