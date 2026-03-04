@@ -1,6 +1,7 @@
-import { ClerkAuthShell } from "@/components/clerk-auth-shell";
 import { SignUp } from "@clerk/nextjs";
 import { ChartLine, Clock, ShieldCheck, Sparkles } from "lucide-react";
+
+import { ClerkAuthShell } from "@/components/clerk-auth-shell";
 
 export default function SignUpPage() {
   return (
